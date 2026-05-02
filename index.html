@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengumuman Kelulusan Siswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="glass-card">
+            <h1>Pengumuman Kelulusan</h1>
+            <p class="subtitle">Tahun Ajaran 2025/2026</p>
+
+            <!-- Countdown Section -->
+            <div id="countdownSection">
+                <p style="margin-bottom: 1.5rem; color: var(--text-muted);">Pengumuman akan dibuka dalam:</p>
+                <div class="countdown-container">
+                    <div class="time-box">
+                        <span class="time-val" id="days">00</span>
+                        <span class="time-label">Hari</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-val" id="hours">00</span>
+                        <span class="time-label">Jam</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-val" id="minutes">00</span>
+                        <span class="time-label">Menit</span>
+                    </div>
+                    <div class="time-box">
+                        <span class="time-val" id="seconds">00</span>
+                        <span class="time-label">Detik</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Section (Hidden until countdown ends) -->
+            <div id="formSection" class="hidden">
+                <p style="margin-bottom: 1.5rem; color: #a5b4fc;">Waktu pengumuman telah tiba! Silakan cek hasil kelulusan Anda.</p>
+                <form id="checkForm">
+                    <div class="form-group">
+                        <label for="nisn">Nomor Induk Siswa Nasional (NISN)</label>
+                        <input type="text" id="nisn" placeholder="Masukkan NISN Anda..." required autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn">Cek Hasil Kelulusan</button>
+                </form>
+
+                <div id="errorAlert" class="alert hidden"></div>
+            </div>
+
+            <!-- Result Section (Hidden initially) -->
+            <div id="resultSection" class="result-box hidden">
+                <h2 class="result-name" id="resName">Nama Siswa</h2>
+                <p class="result-nisn">NISN: <span id="resNisn">1234567890</span></p>
+                <div id="resStatus" class="status-badge">LULUS</div>
+                
+                <button id="btnBack" class="btn" style="margin-top: 2rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">Cek NISN Lain</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Panggil file pengaturan sebelum logika javascript -->
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
